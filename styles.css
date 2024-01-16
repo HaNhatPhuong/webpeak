@@ -520,17 +520,20 @@ li{
 
 .butt{
     text-align: right;
-    margin: 16px 0px;
+    margin: 8px 0px;
+    
 }
 .butt .butt-content{
     font-size: 16px;
-    color: #333;
+    color: #000;
+    background-color: #a19e9e;
     padding: 8px 16px;
     cursor: pointer;
+    width: 100%;
 }
 .butt .butt-content:hover{
-    background-color: #ccc;
-    opacity: .6;
+    color: #fff;
+    background-color: #757575;
 
 }
 /* end-contact */
