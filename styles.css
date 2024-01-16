@@ -18,6 +18,11 @@ html{
 3. màu sắc
 4. kiểu dáng(kiểu chữ,tròn , vuông...
  */
+body{
+    text-decoration: none;
+    list-style: none;
+}
+
 .clear{
     clear: both;
 }
@@ -514,12 +519,37 @@ li{
 
 /* end-contact */
 
-
+.map-section img{
+    width: 100%;
+    background-size: cover;
+    
+}
 
 
 
 /*  */
 #footer {
-
+    padding: 64px 16px;
+    text-align: center;
+    
 }
+
+#footer .list-media{
+    font-size: 24px;
+}
+#footer .list-media a{
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.6);
+}
+#footer .list-media a:hover{
+    opacity: calc(0.6);
+}
+
+#footer .coppyrigt{
+    font-family:sans-serif;
+    font-size: 15px;
+    margin: 15px 0px;
+    color:rgba(0, 0, 0, 0.6);
+}
+
  
