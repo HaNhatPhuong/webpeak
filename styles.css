@@ -518,6 +518,21 @@ li{
     width: 100%;
 }
 
+.butt{
+    text-align: right;
+    margin: 16px 0px;
+}
+.butt .butt-content{
+    font-size: 16px;
+    color: #333;
+    padding: 8px 16px;
+    cursor: pointer;
+}
+.butt .butt-content:hover{
+    background-color: #ccc;
+    opacity: .6;
+
+}
 /* end-contact */
 
 .map-section img{
