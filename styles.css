@@ -536,20 +536,23 @@ li{
 }
 
 #footer .list-media{
-    font-size: 24px;
+    
+    font-size: 40px;
 }
 #footer .list-media a{
+    padding: 0px 8px;
     text-decoration: none;
     color: rgba(0, 0, 0, 0.6);
 }
 #footer .list-media a:hover{
     opacity: calc(0.6);
+    color: #009688;
 }
 
 #footer .coppyrigt{
     font-family:sans-serif;
     font-size: 15px;
-    margin: 15px 0px;
+    margin: 25px 0px;
     color:rgba(0, 0, 0, 0.6);
 }
 
