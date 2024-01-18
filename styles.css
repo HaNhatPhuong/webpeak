@@ -179,9 +179,19 @@ li{
 
 #content .content-section{
     padding: 64px 0;
-    width: 900px;
+    width: 1200px;
     margin-left: auto;
     margin-right: auto;
+    position: relative;
+}
+
+#member{
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 1px ;
+    border-bottom: 1px;
+    border-style: solid;
+    border-color: #ccc;
 }
 
 #content .section-heading{
@@ -212,6 +222,7 @@ li{
     display: flex;
     flex-direction: row;
     
+    
 }
 
 #content .member-item{
@@ -228,7 +239,7 @@ li{
 }
 
 #content .member-avt{
-    width: 154px;
+    width: 200px;
     height: 310px;
     margin-top: 15px;
     border-radius: 4px;
