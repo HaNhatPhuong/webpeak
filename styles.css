@@ -95,8 +95,9 @@ li{
 }
 
 #header .logo-img img{
-    width: 87px;
-    margin-right: 40px;
+    width: 173px;
+    margin-right: 45px;
+    transform: skewX(-18deg);
 }
 
 #nav>li{
