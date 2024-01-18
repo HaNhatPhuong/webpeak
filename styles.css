@@ -185,14 +185,14 @@ li{
     position: relative;
 }
 
-#member{
+/* #member{
     border-left: 0px;
     border-right: 0px;
     border-top: 1px ;
     border-bottom: 1px;
     border-style: solid;
     border-color: #ccc;
-}
+} */
 
 #content .section-heading{
     font-size: 30px;
@@ -253,7 +253,7 @@ li{
 
 .tour-section{
     display: flex;
-    background-color: black;
+    background: linear-gradient( #000,#171717);
     width: 100%;
 } 
 
