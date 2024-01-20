@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/text/themify-icons/themify-icons.css">
 </head>
 <body>
-    <div id="main">
+    < id="main">
         <div id="header">
             
             <ul id="nav">
@@ -29,6 +29,7 @@
                     </div>
                 </li>
                 <li><a href="#off-fan">Off-fan</a></li>
+                <li><a href="#cauhoi">Question</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li><a href="#more">More</a></li>
             </ul> 
@@ -220,6 +221,48 @@
 
             
         </div>
+        <div id="cauhoi" class="questioner">
+                    
+                    <div class="questioner-under">
+                        <h2 class="question-heading">QUESTION</h2>
+                        <p class="question-sub-heading ">Show me what you got</p>
+                        <!-- <h1>Câu hỏi và đáp án</h1> -->
+                        <div class="question-container" id="question1">
+                            <p>Câu hỏi 1: Ai là người đứng đầu gia đình Shelby?</p>
+                            <input type="radio" name="question1" value="Tommy">Tommy<br>
+                            <input type="radio" name="question1" value="Arthur">Arthur<br>
+                            <button onclick="nextQuestion(1)">Tiếp theo</button>
+                        </div>
+                        <div class="question-container" id="question2">
+                            <p>Câu hỏi 2: 2+2= ?</p>
+                            <input type="radio" name="question2" value="5"> 5<br>
+                            <input type="radio" name="question2" value="4"> 4<br>
+                            <button onclick="nextQuestion(2)">Tiếp theo</button>
+                        </div>
+                        <div class="question-container" id="question3">
+                            <p>Câu hỏi 3: 5-4= ?</p>
+                            <input type="radio" name="question3" value="1"> 1<br>
+                            <input type="radio" name="question3" value="9"> 9<br>
+                            <button onclick="nextQuestion(3)">Tiếp theo</button>
+                        </div>
+                        <div class="question-container" id="question4">
+                            <p>Câu hỏi 4: 9:3= ?</p>
+                            <input type="radio" name="question4" value="3"> 3<br>
+                            <input type="radio" name="question4" value="6"> 6<br>
+                            <button onclick="nextQuestion(4)">Tiếp theo</button>
+                        </div>
+                        <div class="question-container" id="question5">
+                            <p>Câu hỏi 5: 6:3= ?</p>
+                            <input type="radio" name="question5" value="2"> 2<br>
+                            <input type="radio" name="question5" value="6"> 6<br>
+                            <button onclick="nextQuestion(4)">Tiếp theo</button>
+                        </div>
+                        
+                        <div class="question-overlay" id="overlay"></div>
+                        <div id="result"></div>
+                    </div>
+        </div>
+        
 
         <div class="under">
             <div id="contact" class="contact">
@@ -227,7 +270,7 @@
                 <p class="contact-sub-heading ">Fan? Drop a note!</p>
 
                 <div class="row contact-content">
-                    <div class="col col-half contact-info" style="color: #ccc;">
+                    <div class="col col-half contact-info" style="color:black;">
                         <p><i class="ti-location-pin"></i>District 1, Ho Chi Minh City</p>
                         <p><i class="ti-mobile"></i>Phone: +83 0367846815</p>
                         <p><i class="ti-email"></i>Email: hnphuong216@gmail.com</p>
@@ -261,6 +304,9 @@
             </div>
             
         </div>
+
+       
+
         <div class="map-section">
             <img src="/text/avt/london.jpg" alt="">
         </div>
@@ -348,6 +394,66 @@
         modalContainer.addEventListener('click', function(event){
             event.stopPropagation()
         })
+
+    </script>
+    <script>
+            var currentQuestion = 1;
+            var totalQuestions = 5;
+            var score = 0;
+
+            var questions = {
+                1: "Tommy",
+                2: "4",
+                3: "1",
+                4: "3",
+                5: "12"
+            };
+            function nextQuestion(questionNumber) {
+            var selectedAnswer = document.querySelector("input[name='question" + questionNumber + "']:checked");
+
+            if (!selectedAnswer) {
+                alert("Hãy chọn một câu trả lời!");
+                return;
+            }
+
+            var correctAnswer = questions[questionNumber];
+
+            if (selectedAnswer.value === correctAnswer) {
+                score++;
+            }
+
+            // Ẩn câu hỏi hiện tại và hiển thị lớp mờ
+            document.getElementById("question" + questionNumber).style.display = "none";
+            document.getElementById("overlay").classList.add("question-fade-in");
+
+            
+            setTimeout(function() {
+                document.getElementById("overlay").classList.remove("question-fade-in");
+                currentQuestion++;
+
+                if (currentQuestion <= totalQuestions) {
+                    // Hiển thị câu hỏi tiếp theo
+                    document.getElementById("question" + currentQuestion).style.display = "block";
+                } else {
+                    displayResult();
+                }
+            }, 0); // 0.5 giây (500ms)
+            }
+
+            function displayResult() {
+                var resultDiv = document.getElementById("result");
+                var resultMessage = score >= 3 ? "<span style='color: white;'>That's a good score!</span>" : "<span style='color: red;'>Better next time!</span>";
+            
+                // Thêm CSS để đổi màu chữ thành trắng
+                var resultHTML = "<h2 style='color: white;'>Kết quả:</h2><p style='color: white;'>Điểm số của bạn: " + score + " / " + totalQuestions + "</p><p style='color: white;'>" + resultMessage + "</p>";
+            
+                // Gán HTML với CSS đã thêm vào phần tử
+                resultDiv.innerHTML = resultHTML;
+            }
+            
+
+            // Hiển thị câu hỏi đầu tiên khi tải trang
+            document.getElementById("question1").style.display = "block";
 
     </script>
 </body>
